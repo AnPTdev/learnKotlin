@@ -1,0 +1,8 @@
+query repository($name: String!, $owner: String!) {
+    repository(name: $name, owner: $owner) {
+        id
+        name
+        owner{login}
+
+    }
+}
