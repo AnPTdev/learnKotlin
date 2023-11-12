@@ -1,0 +1,6 @@
+#FileLock
+#Sun Nov 12 14:05:08 ICT 2023
+server=192.168.4.4\:50614
+hostName=192.168.4.4
+method=file
+id=18bc2593552b0e2f4eb3de5f84df5cf9f29269202c5

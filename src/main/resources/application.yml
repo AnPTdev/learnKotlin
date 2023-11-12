@@ -1,3 +1,19 @@
 github:
   token: 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
   url: https://api.github.com
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2_console
+  datasource:
+    url: jdbc:h2:file:/Users/an.pham/workspaces/github_request/src/main/resources/data/testdb;AUTO_SERVER=TRUE
+#    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true

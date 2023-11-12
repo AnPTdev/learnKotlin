@@ -4,13 +4,15 @@ import com.apollographql.apollo3.ApolloClient
 import com.example.Query
 import com.example.github_request.utils.GithubConfig
 import com.example.github_request.models.GithubModel
+import com.example.github_request.repositories.GithubRepository
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import org.springframework.web.client.HttpClientErrorException
 import org.springframework.web.client.RestTemplate
 
 
 @Service
-class GithubService(private val githubConfig: GithubConfig) {
+class GithubService(private val githubConfig: GithubConfig, @Autowired val githubRepository: GithubRepository) {
 
 
     private val token = githubConfig.token
@@ -35,6 +37,9 @@ class GithubService(private val githubConfig: GithubConfig) {
         return response.body
     }
 
+    fun getAllRepo(): MutableIterable<GithubModel> {
+        return githubRepository.findAll()
+    }
 }
 
 
